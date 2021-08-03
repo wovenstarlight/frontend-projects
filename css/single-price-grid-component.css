@@ -8,19 +8,33 @@
 	--lightgray: hsl(204, 43%, 93%); /* Neutral */
 	--grayblue: hsl(218, 22%, 67%); /* Neutral */
 }
-/* Font size */
-body {
+/* Font */
+body, * {
 	font-size: 16px;
 	font-family: "Karla", sans-serif;
 }
 
+body { background-color: var(--lightgray); }
+
+/* Arranging main module */
+.joinmodule {
+	display: grid;
+	background: white;
+	width: 85%;
+	max-width: 50em;
+	margin: 3em auto;
+	border-radius: 1em;
+}
+
+/* Padding for all sections */
+.joinmodule div {
+	padding: 2em;
+}
+
 @media screen and (min-width: 550px) {
 	/* Grid layout for desktop */
-	.joinmodule {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-	}
+	.joinmodule { grid-template-columns: 1fr 1fr; }
 	.joinmodule .top { grid-column: 1 / span 2; }
-	.joinmodule .subscribe { grid-row: 2; }
-	.joinmodule .benefits { grid-row: 2; }
+	.joinmodule .subscribe { grid-row: 2; border-bottom-left-radius: 1em; }
+	.joinmodule .benefits { grid-row: 2; border-bottom-right-radius: 1em; }
 }
