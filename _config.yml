@@ -4,7 +4,7 @@ github: https://github.com/wovenstarlight
 
 domain: wovenstarlight.github.io
 url: https://wovenstarlight.github.io
-baseurl: /frontend-projects
+baseurl: /frontend-projects/
 
 # Adding default layout for non-post pages.
 defaults:

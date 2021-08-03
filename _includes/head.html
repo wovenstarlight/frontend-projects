@@ -10,14 +10,14 @@
 	<title>{{ pagetitle }}</title>
 
 	<!-- Include basic site CSS and the CSS for the specific page -->
-	<link rel="stylesheet" href="{{ '/css/sitewide.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ 'css/sitewide.css' | prepend: site.baseurl }}">
 	{% if page.projectlink %}
-		<link rel="stylesheet" href="{{ page.projectlink | prepend: '/css/' | prepend: site.baseurl }}">
+		<link rel="stylesheet" href="{{ page.projectlink | prepend: 'css/' | prepend: site.baseurl }}">
 	{% endif %}
 	<!-- Include any additional required CSS -->
 	{% if page.sheets %}
 		{% for sheet in page.sheets %}
-		<link rel="stylesheet" href="{{ sheet | prepend: '/css/' | prepend: site.baseurl }}">
+		<link rel="stylesheet" href="{{ sheet | prepend: 'css/' | prepend: site.baseurl }}">
 		{% endfor %}
 	{% endif %}
 </head>
