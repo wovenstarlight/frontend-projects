@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/assets/favicon-32x32.png">
 
 	{% capture pagetitle %}
-	{{ site.title }}{% if page.projectname %} | {{ page.projectname}} {% endif %}
+	{% if page.projectname %}{{ page.projectname}} | {% endif %}{{ site.title }}
 	{% endcapture %}
 	<title>{{ pagetitle }}</title>
 
