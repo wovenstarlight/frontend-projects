@@ -27,7 +27,7 @@ body { background-color: var(--lightgray); }
 .joinmodule {
 	display: grid;
 	background: white;
-	color: white;
+	color: var(--lightgray);
 	width: 85%;
 	max-width: 40em;
 	margin: 3em auto;
@@ -39,6 +39,7 @@ body { background-color: var(--lightgray); }
 .joinmodule h3, .joinmodule h4 {
 	font-size: 1.1em;
 	font-weight: bold;
+	color: white;
 }
 
 /* Padding for all sections */
@@ -49,7 +50,6 @@ body { background-color: var(--lightgray); }
 /* Top section */
 .joinmodule .top h3 {
 	font-size: 1.4em;
-	margin-bottom: 0.75em;
 	color: var(--cyan);
 }
 .joinmodule .top h4 {
@@ -67,6 +67,19 @@ body { background-color: var(--lightgray); }
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+.joinmodule .subscribe p.price {
+	display: flex;
+	align-items: center;
+}
+.joinmodule .subscribe p.price span {
+	font-size: 2em;
+	font-weight: bold;
+	padding-right: 0.25em;
+	color: white;
+}
+.joinmodule .subscribe p:not(.price) {
+	font-size: 0.8em;
 }
 .joinmodule .subscribe button {
 	background-color: var(--yellow);
@@ -91,17 +104,20 @@ body { background-color: var(--lightgray); }
 .joinmodule ul {
 	font-size: 0.9em;
 	color: var(--lightgray);
-	margin-top: 1em;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 600px) {
 	/* Grid layout for desktop */
 	.joinmodule { grid-template-columns: 1fr 1fr; }
 	.joinmodule .top { grid-column: 1 / span 2; }
 	.joinmodule .subscribe { grid-row: 2; border-bottom-left-radius: 0.35em; }
 	.joinmodule .benefits { grid-row: 2; border-bottom-right-radius: 0.35em; }
+	
+	.joinmodule .top h3, .joinmodule .benefits h4 { margin-bottom: 0.75em; }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
+	.joinmodule h3, .joinmodule h4 { margin-bottom: 0.75em; }
+	
 	.joinmodule .benefits { border-radius: 0 0 0.35em 0.35em; }
 }
