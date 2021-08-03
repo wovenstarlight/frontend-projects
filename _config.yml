@@ -1,0 +1,20 @@
+title: "Frontend Mentor Projects by @wovenstarlight"
+author: "wovenstarlight"
+github: https://github.com/wovenstarlight
+
+domain: wovenstarlight.github.io
+url: https://wovenstarlight.github.io
+baseurl: /frontend-projects
+
+# Adding default layout for non-post pages.
+defaults:
+  -
+    scope:
+      path: "" # all files in the project
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_posts" # all posts
+    values:
+      layout: "post"
