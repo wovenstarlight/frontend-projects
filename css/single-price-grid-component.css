@@ -31,13 +31,13 @@ body { background-color: var(--lightgray); }
 	width: 85%;
 	max-width: 40em;
 	margin: 3em auto;
-	border-radius: 1em;
+	border-radius: 0.35em;
 	filter: drop-shadow(0 5px 10px hsla(var(--grayblue--hsla), 0.5));
 }
 
 /* Heading styles */
 .joinmodule h3, .joinmodule h4 {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-weight: bold;
 }
 
@@ -68,16 +68,31 @@ body { background-color: var(--lightgray); }
 	flex-direction: column;
 	justify-content: space-between;
 }
+.joinmodule .subscribe button {
+	background-color: var(--yellow);
+	color: white;
+	padding: 0.75em;
+	border-radius: 0.35em;
+}
 
 /* Benefits section */
 .joinmodule .benefits {
 	background: hsla(var(--cyan--hsla), 0.85);
+}
+.joinmodule ul {
+	font-size: 0.9em;
+	color: var(--lightgray);
+	margin-top: 1em;
 }
 
 @media screen and (min-width: 550px) {
 	/* Grid layout for desktop */
 	.joinmodule { grid-template-columns: 1fr 1fr; }
 	.joinmodule .top { grid-column: 1 / span 2; }
-	.joinmodule .subscribe { grid-row: 2; border-bottom-left-radius: 1em; }
-	.joinmodule .benefits { grid-row: 2; border-bottom-right-radius: 1em; }
+	.joinmodule .subscribe { grid-row: 2; border-bottom-left-radius: 0.35em; }
+	.joinmodule .benefits { grid-row: 2; border-bottom-right-radius: 0.35em; }
+}
+
+@media screen and (max-width: 550px) {
+	.joinmodule .benefits { border-radius: 0 0 0.35em 0.35em; }
 }
