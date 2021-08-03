@@ -1,13 +1,17 @@
 /* For the home page link */
 .homelink {
 	position: fixed;
-	left: -6.5em;
+	left: -7em;
 	top: 1em;
 	background: black;
 	color: white;
 	border-radius: 0 0.5em 0.5em 0;
+	opacity: 0.25;
 }
-.homelink:hover { left: -0.25em; }
+.homelink:hover {
+	left: -0.25em;
+	opacity: 1;
+}
 
 .homelink:not(:hover)::after {
 	content: ">";
@@ -18,7 +22,7 @@
 .homelink a {
 	pointer-events: all;
 	display: inline-block;
-	width: 6em;
+	width: 6.5em;
 	text-align: center;
 	padding: 0.5em;
 	color: white;
