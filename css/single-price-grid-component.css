@@ -1,0 +1,26 @@
+/* STYLE GUIDE IMPORTS */
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Colors */
+:root {
+	--cyan: hsl(179, 62%, 43%); /* Primary */
+	--yellow: hsl(71, 73%, 54%); /* Primary */
+	--lightgray: hsl(204, 43%, 93%); /* Neutral */
+	--grayblue: hsl(218, 22%, 67%); /* Neutral */
+}
+/* Font size */
+body {
+	font-size: 16px;
+	font-family: "Karla", sans-serif;
+}
+
+@media screen and (min-width: 550px) {
+	/* Grid layout for desktop */
+	.joinmodule {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.joinmodule .top { grid-column: 1 / span 2; }
+	.joinmodule .subscribe { grid-row: 2; }
+	.joinmodule .benefits { grid-row: 2; }
+}
