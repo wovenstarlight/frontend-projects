@@ -17,7 +17,7 @@
 	<!-- Include any additional required CSS -->
 	{% if page.sheets %}
 		{% for sheet in page.sheets %}
-		<link rel="stylesheet" href="{{ sheet | prepend: 'css/' | prepend: site.baseurl }}">
+		<link rel="stylesheet" href="{{ sheet | prepend: 'css/' | prepend: site.baseurl | append: '.css' }}">
 		{% endfor %}
 	{% endif %}
 </head>
