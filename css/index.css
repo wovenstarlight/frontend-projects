@@ -1,0 +1,27 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+	background: #08454e;
+	font-family: Karla, sans-serif;
+	padding: 2em 1em;
+}
+
+h3 {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #5cbeba;
+}
+
+table {
+	background: #00ffc321;
+	width: 100%;
+	max-width: 40em;
+	margin: 2em auto;
+	text-align: center;
+}
+tr:nth-child(even) { background: #fff1; }
+td { padding: 0.5em; vertical-align: middle; }
+td a, td a:link { color: #9cff97; }
+td a:visited { color: #7cd156; }
+td a:hover { color: white; }
