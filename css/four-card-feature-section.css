@@ -1,0 +1,21 @@
+/* STYLE GUIDE */
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
+/* Colors */
+:root {
+	/* Primary */
+	--red: hsl(0, 78%, 62%);
+	--cyan: hsl(180, 62%, 55%);
+	--orange: hsl(34, 97%, 64%);
+	--blue: hsl(212, 86%, 64%);
+
+	/* Neutral */
+	--darkblue: hsl(234, 12%, 34%);
+	--grayblue: hsl(229, 6%, 66%);
+	--lightgray: hsl(0, 0%, 98%);
+}
+/* Set font */
+body, * {
+	font-family: Poppins, sans-serif;
+	font-size: 15px;
+}
