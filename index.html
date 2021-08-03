@@ -5,6 +5,7 @@ layout: default
 
 <table class="toc">
 	<tbody>
+		{% for post in site.posts %}
 		<tr>
 			<td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.projectname }}</a></td>
 			<td><a href="{{ post.frontend }}">Original project on Frontend Mentor</a></td>
