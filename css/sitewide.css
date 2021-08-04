@@ -29,6 +29,17 @@
 	color: white;
 }
 
+/* For the header */
+header {
+	background: #08454e;
+	text-align: center;
+	padding: 0.5em;
+}
+header h1 {
+	color: #5fe2bd;
+	font-size: 1.2em;
+}
+
 
 /* For the attribution links in the footer */
 .attribution { font-size: 11px; text-align: center; }
