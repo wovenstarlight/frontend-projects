@@ -68,10 +68,10 @@ body {
 .module div.card {
 	background: white;
 	filter: drop-shadow(0 5px 8px hsla(var(--grayblue--hsla), 0.5));
-	height: 13em;
+	height: 12.5em;
 	border-top: 4px solid;
 	border-radius: 0.25em;
-	padding: 1.5em;
+	padding: 2em 1.5em;
 }
 .module div.card::after {
 	content: "";
@@ -81,7 +81,7 @@ body {
 	background-size: 4em;
 	position: absolute;
 	right: 1.5em;
-	bottom: 1.5em;
+	bottom: 2em;
 }
 .module div.card h2 {
 	font-weight: 600;
