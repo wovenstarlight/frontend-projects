@@ -2,16 +2,18 @@
 layout: default
 sheets: [index]
 ---
-<h3 style="text-align: center;">Welcome to @wovenstarlight's Frontend Mentor project repository!</h3>
-
-<table class="toc">
-	<tbody>
-		{% for post in site.posts %}
-		<tr>
-			<td>{{ post.date | date: "%Y.%m.%d" }}</td>
-			<td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.projectname }}</a></td>
-			<td><a href="{{ post.frontend }}">Challenge on Frontend Mentor</a></td>
-		</tr>
-		{% endfor %}
-	</tbody>
-</table>
+<main role="main">
+	<h3 style="text-align: center;">Welcome to @wovenstarlight's Frontend Mentor project repository!</h3>
+	
+	<table class="toc">
+		<tbody>
+			{% for post in site.posts %}
+			<tr>
+				<td>{{ post.date | date: "%Y.%m.%d" }}</td>
+				<td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.projectname }}</a></td>
+				<td><a href="{{ post.frontend }}">Challenge on Frontend Mentor</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</main>
