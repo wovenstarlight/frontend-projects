@@ -13,9 +13,72 @@
 	--darkblue: hsl(234, 12%, 34%);
 	--grayblue: hsl(229, 6%, 66%);
 	--lightgray: hsl(0, 0%, 98%);
+	
+	/* Colors for hsla usage */
+	--grayblue--hsla: 229, 6%, 66%;
 }
 /* Set font */
 body, * {
 	font-family: Poppins, sans-serif;
 	font-size: 15px;
+	color: var(--darkblue);
+}
+
+body {
+	background-color: var(--lightgray);
+	padding: 1em;
+}
+
+/* Overall module */
+.module { text-align: center; }
+
+/* Heading */
+.module h1 {
+	font-size: 2em;
+	font-weight: 200;
+}
+.module h1 strong { font-weight: 600; }
+
+/* Subtitle */
+.module p {
+	max-width: 35em;
+	margin: auto;
+}
+
+/* AI descriptor cards */
+/* Layout */
+.module section.cards {
+	display: grid;
+	align-items: center;
+	/* Positioning the group of cards as a whole */
+	max-width: 80em;
+	margin: 2em auto;
+	text-align: left;
+}
+.module .cards .central {
+	display: grid;
+	row-gap: 1.5em;
+}
+/* Styling */
+.module div.card {
+	background: white;
+	filter: drop-shadow(0 5px 8px hsla(var(--grayblue--hsla), 0.5));
+	height: 13em;
+}
+
+@media (min-width: 800px) {
+	/* Cards positioning and spacing */
+	.module section.cards {
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 2em;
+	}
+}
+
+@media (max-width: 800px) {
+	/* Cards sizing and spacing */
+	.module section.cards {
+		row-gap: 1.5em;
+		width: 85%;
+		max-width: 30em;
+	}
 }
