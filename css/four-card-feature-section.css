@@ -35,12 +35,12 @@ body {
 }
 
 /* Heading */
-.module h1 {
+.module h2 {
 	font-size: 2em;
 	font-weight: 200;
 	line-height: 1.2em;
 }
-.module h1 strong { font-weight: 600; }
+.module h2 strong { font-weight: 600; }
 
 /* Subtitle */
 .module p {
@@ -126,7 +126,7 @@ body {
 
 @media (max-width: 600px) {
 	/* Heading */
-	.module h1 { font-size: 1.6em; }
+	.module h2 { font-size: 1.6em; }
 	
 	/* Subtitle */
 	.module p { margin-bottom: 4em; }
