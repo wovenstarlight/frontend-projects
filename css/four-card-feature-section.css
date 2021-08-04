@@ -30,19 +30,25 @@ body {
 }
 
 /* Overall module */
-.module { text-align: center; }
+.module {
+	text-align: center;
+	padding: 1em;
+}
 
 /* Heading */
 .module h1 {
 	font-size: 2em;
 	font-weight: 200;
+	line-height: 1.2em;
 }
 .module h1 strong { font-weight: 600; }
 
 /* Subtitle */
 .module p {
 	max-width: 35em;
-	margin: auto;
+	margin: 1em auto;
+	color: var(--grayblue);
+	line-height: 1.6em;
 }
 
 /* AI descriptor cards */
@@ -51,6 +57,7 @@ body {
 	display: grid;
 	align-items: center;
 	/* Positioning the group of cards as a whole */
+	width: 90%;
 	max-width: 80em;
 	margin: 2em auto;
 	text-align: left;
@@ -64,9 +71,23 @@ body {
 	background: white;
 	filter: drop-shadow(0 5px 8px hsla(var(--grayblue--hsla), 0.5));
 	height: 13em;
+	border-top: 4px solid;
+	border-radius: 0.25em;
 }
+.module div.card h2 {
+	font-weight: 600;
+	font-size: 1.2em;
+}
+.module div.card p {
+	color: var(--grayblue);
+}
+/* Card borders */
+.module .card#supervisor { border-top-color: var(--cyan); }
+.module .card#teambuilder { border-top-color: var(--red); }
+.module .card#karma { border-top-color: var(--orange); }
+.module .card#calculator { border-top-color: var(--blue); }
 
-@media (min-width: 800px) {
+@media (min-width: 850px) {
 	/* Cards positioning and spacing */
 	.module section.cards {
 		grid-template-columns: 1fr 1fr 1fr;
@@ -74,11 +95,16 @@ body {
 	}
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
+	/* Heading */
+	.module h1 { font-size: 1.6em; }
+	
+	/* Subtitle */
+	.module p { margin-bottom: 4em; }
+	
 	/* Cards sizing and spacing */
 	.module section.cards {
 		row-gap: 1.5em;
-		width: 85%;
-		max-width: 30em;
+		max-width: 25em;
 	}
 }
