@@ -96,10 +96,10 @@ body {
 .module .card#karma { border-top-color: var(--orange); }
 .module .card#calculator { border-top-color: var(--blue); }
 /* Card graphics */
-.module .card#supervisor::after { background-image: url("frontend-projects/assets/four-card-feature-section/icon-supervisor.svg"); }
-.module .card#teambuilder::after { background-image: url("frontend-projects/assets/four-card-feature-section/icon-team-builder.svg"); }
-.module .card#karma::after { background-image: url("frontend-projects/assets/four-card-feature-section/icon-karma.svg"); }
-.module .card#calculator::after { background-image: url("frontend-projects/assets/four-card-feature-section/icon-calculator.svg"); }
+.module .card#supervisor::after { background-image: url("/frontend-projects/assets/four-card-feature-section/icon-supervisor.svg"); }
+.module .card#teambuilder::after { background-image: url("/frontend-projects/assets/four-card-feature-section/icon-team-builder.svg"); }
+.module .card#karma::after { background-image: url("/frontend-projects/assets/four-card-feature-section/icon-karma.svg"); }
+.module .card#calculator::after { background-image: url("/frontend-projects/assets/four-card-feature-section/icon-calculator.svg"); }
 
 @media (min-width: 850px) {
 	/* Cards positioning and spacing */
