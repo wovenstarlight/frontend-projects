@@ -5,6 +5,7 @@ body {
 	background: #08454e;
 	font-family: Karla, sans-serif;
 	padding: 2em 1em;
+	color: #5fe2bd;
 }
 
 h3 {
@@ -16,7 +17,7 @@ h3 {
 table {
 	background: #00ffc321;
 	width: 100%;
-	max-width: 40em;
+	max-width: 45em;
 	margin: 2em auto;
 	text-align: center;
 }
