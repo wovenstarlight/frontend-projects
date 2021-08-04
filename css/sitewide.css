@@ -5,6 +5,7 @@
 	top: 1em;
 	background: black;
 	color: white;
+	font-family: Georgia, serif;
 	border-radius: 0 0.5em 0.5em 0;
 	opacity: 0.25;
 }
