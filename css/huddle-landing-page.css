@@ -170,7 +170,7 @@ img[src*=logo] { margin: 1.5em 0; }
 	
 	/* Mockups
 		Provide a width limit to prevent image from taking up full screen */
-	#content img { max-width: min(50em, 100%); }
+	#content img { max-width: min(35em, 100%); }
 	
 	/* "Build the community your fans will love" heading
 		Decrease font size and spacing from other elements */
