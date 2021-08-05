@@ -32,5 +32,6 @@ main { background: var(--violet) no-repeat; }
 	main {
 		background-image: url("/frontend-projects/assets/huddle-landing-page/bg-mobile.svg");
 		background-position: top;
+		background-size: 100%;
 	}
 }
