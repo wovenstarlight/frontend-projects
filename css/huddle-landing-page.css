@@ -10,19 +10,25 @@
 	--violet: hsl(257, 40%, 49%);
 	--magenta: hsl(300, 69%, 71%);
 }
-
+/* Set fonts */
 body, * {
 	font-family: "Open Sans", sans-serif;
 	font-size: 15px;
 	transition: .2s;
 }
 
-main { background: var(--violet) no-repeat; padding: 1em 0;}
+/* Overall landing page container
+	Default background and content spacing */
+main {
+	background: var(--violet) no-repeat;
+	padding: 1em 0;
+}
 
 /* Make sure images don't overflow the container, particularly on mobile */
 img { max-width: 100%; }
 
-/* #content acts as the centered holder for most of the page's elements */
+/* The centered holder for most of the page's elements
+	Font adjustments and container spacing */
 #content {
 	color: white;
 	line-height: 1.75;
@@ -30,10 +36,10 @@ img { max-width: 100%; }
 	padding: 1em 0;
 }
 
-/* Huddle logo */
+/* Huddle logo; spacing */
 img[src*=logo] { margin: 1.5em 0; }
 
-/* Build the community your fans will love heading */
+/* "Build the community your fans will love" heading; base font style */
 #content h2 { font: 600 2.25em/1.65 "Poppins", sans-serif; }
 
 /* Treat button and social icons as clickable */
@@ -42,7 +48,8 @@ img[src*=logo] { margin: 1.5em 0; }
 	cursor: pointer;
 }
 
-/* Register button */
+/* Register button
+	Sizing/shaping/spacing/decoration of button, interactivity */
 #content button {
 	border: none;
 	background-color: white;
@@ -62,12 +69,12 @@ img[src*=logo] { margin: 1.5em 0; }
 	box-shadow: 0 1px 3px 3px #0003;
 }
 
-/* Social icons */
+/* Social icons (individual icons)
+	Alignment/spacing of icons, sizing/shaping/decoration of buttons, interactivity */
 .socials i {
 	border: 1px solid;
 	font-size: 1.2em;
-	text-align: center; /* Align the icons in the center of their circles */
-	/* Give a uniform sizing to the icons*/
+	text-align: center;
 	width: 1em;
 	height: 1em;
 	padding: 0.5em;
@@ -80,20 +87,27 @@ img[src*=logo] { margin: 1.5em 0; }
 	box-shadow: 0 0 5px 5px #0003 inset;
 }
 
+
 /* Desktop sizing */
 @media (min-width: 950px) {
+	/* Overall landing page container
+		Swap out page background image for wider version */
 	main {
 		background-image: url("/frontend-projects/assets/huddle-landing-page/bg-desktop.svg");
 		background-position: center;
 		background-size: cover;
 	}
 	
+	/* Huddle logo
+		Sizing and spacing */
 	img[src*=logo] {
 		width: 14%;
 		/* Maintain same padding on left as content section */
 		padding-left: max(5%, calc((100% - 100em) / 2));
 	}
 	
+	/* Centered content container
+		Arrange content layout and container width */
 	#content {
 		display: grid;
 		grid-template-columns: 1.2fr 1fr;
@@ -102,13 +116,19 @@ img[src*=logo] { margin: 1.5em 0; }
 		max-width: 100em;
 	}
 	
+	/* Mockups
+		Fill grid cell (height is auto) */
 	#content img { width: 100%; }
 	
+	/* "Build the community your fans will love" heading
+		Make slightly narrower than rest of content and space out */
 	#content h2 {
 		width: 80%;
 		margin: 1.5em 0 0.5em;
 	}
 	
+	/* Social icons container
+		Align to far right and space out */
 	.socials {
 		grid-column: 1 / span 2;
 		text-align: right;
@@ -116,40 +136,55 @@ img[src*=logo] { margin: 1.5em 0; }
 	}
 }
 
+
 /* On smaller screens, decrease header size slightly */
 @media (max-width: 1200px) {
 	#content { font-size: 12px; }
 }
 
+
 /* Mobile sizing */
 @media (max-width: 950px) {
+	/* Overall landing page container
+		Swap out page background image for narrower version */
 	main {
 		background-image: url("/frontend-projects/assets/huddle-landing-page/bg-mobile.svg");
 		background-position: top;
 		background-size: 100%;
 	}
 	
+	/* Huddle logo
+		Fix spacing value and width on smaller screens */
 	img[src*=logo] {
 		padding-left: 7.5%;
 		width: 24%;
 		min-width: 8.75em;
 	}
 	
+	/* Centered content container
+		Center all content and adjust width on smaller screens */
 	#content {
 		text-align: center;
 		width: 85%;
 	}
 	
+	/* Mockups
+		Provide a width limit to prevent image from taking up full screen */
 	#content img { max-width: min(50em, 100%); }
 	
+	/* "Build the community your fans will love" heading
+		Decrease font size and spacing from other elements */
 	#content h2 {
 		margin: 0.5em auto;
 		font-size: 1.6em;
 	}
 	
-	/* Register button */
+	/* Register button
+		Make shadow a little tighter on smaller screens */
 	#content button { box-shadow: 0 3px 3px 3px #0003; }
 	#content button:active { box-shadow: 0 1px 1px 1px #0003; }
 	
+	/* Social icons container
+		Space things out */
 	.socials { margin: 3em 0 0.5em; }
 }
