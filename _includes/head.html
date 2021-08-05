@@ -21,4 +21,10 @@
 		<link rel="stylesheet" href="{{ sheet | prepend: '/css/' | prepend: site.baseurl | append: '.css' }}">
 		{% endfor %}
 	{% endif %}
+	<!-- Include any additional externally hosted CSS -->
+	{% if page.links %}
+		{% for link in page.links %}
+		<link rel="stylesheet" href="{{ link }}">
+		{% endfor %}
+	{% endif %}
 </head>
