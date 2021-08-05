@@ -18,12 +18,40 @@ body, * {
 
 main { background: var(--violet) no-repeat; }
 
+#content {
+	color: white;
+	line-height: 1.5;
+	margin: auto;
+	padding: 1em 0;
+}
+
+#content h2 { font: 600 1.8em/1.65 "Poppins", sans-serif; }
+
 /* Desktop sizing */
 @media (min-width: 600px) {
 	main {
 		background-image: url("/frontend-projects/assets/huddle-landing-page/bg-desktop.svg");
 		background-position: center;
 		background-size: cover;
+	}
+	
+	#content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(auto, 3);
+		align-items: center;
+		width: 90%;
+		max-width: 100em;
+	}
+	
+	#content h2 {
+		width: 70%;
+		margin-bottom: 0.5em;
+	}
+	
+	.socials {
+		grid-column: 1 / span 2;
+		text-align: right;
 	}
 }
 
@@ -33,5 +61,15 @@ main { background: var(--violet) no-repeat; }
 		background-image: url("/frontend-projects/assets/huddle-landing-page/bg-mobile.svg");
 		background-position: top;
 		background-size: 100%;
+	}
+	
+	#content {
+		text-align: center;
+		width: 85%;
+	}
+	
+	#content h2 {
+		margin: 0.5em auto;
+		font-size: 1.6em;
 	}
 }
