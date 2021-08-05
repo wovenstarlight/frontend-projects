@@ -14,6 +14,7 @@
 body, * {
 	font-family: "Open Sans", sans-serif;
 	font-size: 15px;
+	transition: .2s;
 }
 
 main { background: var(--violet) no-repeat; }
@@ -21,46 +22,47 @@ main { background: var(--violet) no-repeat; }
 /* Make sure images don't overflow the container, particularly on mobile */
 img { max-width: 100%; }
 
+/* #content acts as the centered holder for most of the page's elements */
 #content {
 	color: white;
-	line-height: 1.5;
+	line-height: 1.75;
 	margin: auto;
 	padding: 1em 0;
 }
 
+/* Huddle logo */
 img[src*=logo] { margin: 1.5em 0; }
 
-#content h2 { font: 600 1.8em/1.65 "Poppins", sans-serif; }
+/* Build the community your fans will love heading */
+#content h2 { font: 600 2.25em/1.65 "Poppins", sans-serif; }
 
 /* Desktop sizing */
-@media (min-width: 600px) {
+@media (min-width: 950px) {
 	main {
 		background-image: url("/frontend-projects/assets/huddle-landing-page/bg-desktop.svg");
 		background-position: center;
 		background-size: cover;
 	}
 	
-	#content {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: repeat(auto, 3);
-		column-gap: 2em;
-		align-items: center;
-		width: 90%;
-		max-width: 100em;
-	}
-	
 	img[src*=logo] {
-		width: 12.5%;
-		max-width: 14em;
-		margin-bottom: 0;
+		width: 14%;
 		/* Maintain same padding on left as content section */
 		padding-left: max(5%, calc((100% - 100em) / 2));
 	}
 	
+	#content {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		column-gap: 3em;
+		width: 90%;
+		max-width: 100em;
+	}
+	
+	#content img { width: 100%; }
+	
 	#content h2 {
-		width: 70%;
-		margin-bottom: 0.5em;
+		width: 80%;
+		margin: 1.5em 0 0.5em;
 	}
 	
 	.socials {
@@ -69,17 +71,17 @@ img[src*=logo] { margin: 1.5em 0; }
 	}
 }
 
+/* On smaller screens, decrease header size slightly */
+@media (max-width: 1200px) {
+	#content { font-size: 12px; }
+}
+
 /* Mobile sizing */
-@media (max-width: 600px) {
+@media (max-width: 950px) {
 	main {
 		background-image: url("/frontend-projects/assets/huddle-landing-page/bg-mobile.svg");
 		background-position: top;
 		background-size: 100%;
-	}
-	
-	#content {
-		text-align: center;
-		width: 85%;
 	}
 	
 	img[src*=logo] {
@@ -87,6 +89,13 @@ img[src*=logo] { margin: 1.5em 0; }
 		width: 24%;
 		min-width: 8.75em;
 	}
+	
+	#content {
+		text-align: center;
+		width: 85%;
+	}
+	
+	#content img { max-width: min(50em, 100%); }
 	
 	#content h2 {
 		margin: 0.5em auto;
