@@ -17,7 +17,7 @@ body, * {
 	transition: .2s;
 }
 
-main { background: var(--violet) no-repeat; }
+main { background: var(--violet) no-repeat; padding: 1em 0;}
 
 /* Make sure images don't overflow the container, particularly on mobile */
 img { max-width: 100%; }
@@ -59,8 +59,25 @@ img[src*=logo] { margin: 1.5em 0; }
 	color: white;
 }
 #content button:active {
-	background-color: var(--violet);
-	color: white;
+	box-shadow: 0 1px 3px 3px #0003;
+}
+
+/* Social icons */
+.socials i {
+	border: 1px solid;
+	font-size: 1.2em;
+	text-align: center; /* Align the icons in the center of their circles */
+	/* Give a uniform sizing to the icons*/
+	width: 1em;
+	height: 1em;
+	padding: 0.5em;
+	margin: 0.35em;
+	border-radius: 100%; /* round! */
+}
+.socials i:hover { color: #fd51c0; }
+.socials i:active {
+	text-shadow: 0 0 10px #0003;
+	box-shadow: 0 0 5px 5px #0003 inset;
 }
 
 /* Desktop sizing */
@@ -95,6 +112,7 @@ img[src*=logo] { margin: 1.5em 0; }
 	.socials {
 		grid-column: 1 / span 2;
 		text-align: right;
+		margin-top: 1em;
 	}
 }
 
@@ -128,4 +146,10 @@ img[src*=logo] { margin: 1.5em 0; }
 		margin: 0.5em auto;
 		font-size: 1.6em;
 	}
+	
+	/* Register button */
+	#content button { box-shadow: 0 3px 3px 3px #0003; }
+	#content button:active { box-shadow: 0 1px 1px 1px #0003; }
+	
+	.socials { margin: 3em 0 0.5em; }
 }
