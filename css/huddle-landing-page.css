@@ -157,8 +157,8 @@ img[src*=logo] { margin: 1.5em 0; }
 		Fix spacing value and width on smaller screens */
 	img[src*=logo] {
 		padding-left: 7.5%;
-		width: 24%;
-		min-width: 8.75em;
+		/* width: min, regular, max values */
+		width: max(8.75em, min(24%, 12em));
 	}
 	
 	/* Centered content container
