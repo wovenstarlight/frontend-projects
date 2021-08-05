@@ -16,7 +16,7 @@ body, * {
 	font-size: 15px;
 }
 
-main { background: #674bb1 no-repeat; }
+main { background: var(--violet) no-repeat; }
 
 /* Desktop sizing */
 @media (min-width: 600px) {
