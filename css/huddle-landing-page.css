@@ -36,6 +36,33 @@ img[src*=logo] { margin: 1.5em 0; }
 /* Build the community your fans will love heading */
 #content h2 { font: 600 2.25em/1.65 "Poppins", sans-serif; }
 
+/* Treat button and social icons as clickable */
+#content button,
+.socials i {
+	cursor: pointer;
+}
+
+/* Register button */
+#content button {
+	border: none;
+	background-color: white;
+	border-radius: 5em;
+	font-family: "Poppins", sans-serif;
+	color: var(--violet);
+	padding: 0.5em;
+	margin: 1em 0;
+	min-width: 12.5em;
+	box-shadow: 0 3px 5px 5px #0003;
+}
+#content button:hover {
+	background-color: var(--magenta);
+	color: white;
+}
+#content button:active {
+	background-color: var(--violet);
+	color: white;
+}
+
 /* Desktop sizing */
 @media (min-width: 950px) {
 	main {
