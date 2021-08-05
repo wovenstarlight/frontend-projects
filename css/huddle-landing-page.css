@@ -18,12 +18,17 @@ body, * {
 
 main { background: var(--violet) no-repeat; }
 
+/* Make sure images don't overflow the container, particularly on mobile */
+img { max-width: 100%; }
+
 #content {
 	color: white;
 	line-height: 1.5;
 	margin: auto;
 	padding: 1em 0;
 }
+
+img[src*=logo] { margin: 1.5em 0; }
 
 #content h2 { font: 600 1.8em/1.65 "Poppins", sans-serif; }
 
@@ -39,9 +44,18 @@ main { background: var(--violet) no-repeat; }
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: repeat(auto, 3);
+		column-gap: 2em;
 		align-items: center;
 		width: 90%;
 		max-width: 100em;
+	}
+	
+	img[src*=logo] {
+		width: 12.5%;
+		max-width: 14em;
+		margin-bottom: 0;
+		/* Maintain same padding on left as content section */
+		padding-left: max(5%, calc((100% - 100em) / 2));
 	}
 	
 	#content h2 {
@@ -66,6 +80,12 @@ main { background: var(--violet) no-repeat; }
 	#content {
 		text-align: center;
 		width: 85%;
+	}
+	
+	img[src*=logo] {
+		padding-left: 7.5%;
+		width: 24%;
+		min-width: 8.75em;
 	}
 	
 	#content h2 {
