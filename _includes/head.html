@@ -10,7 +10,9 @@
 	<title>{{ pagetitle }}</title>
 
 	<!-- Include basic site CSS and the CSS for the specific page -->
-	<link rel="stylesheet" href="{{ '/css/reset.css' | prepend: site.baseurl }}">
+	{% unless page.noReset %}
+		<link rel="stylesheet" href="{{ '/css/reset.css' | prepend: site.baseurl }}">
+	{% endunless %}
 	<link rel="stylesheet" href="{{ '/css/sitewide.css' | prepend: site.baseurl }}">
 	{% if page.projectlink %}
 		<link rel="stylesheet" href="{{ page.projectlink | prepend: '/css/' | prepend: site.baseurl | append: '.css' }}">
