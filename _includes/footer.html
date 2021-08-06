@@ -1,5 +1,6 @@
+{% assign taglist = page.tags %}
 <footer>
-	<p><em>Tags:</em> {% for tag in page.tags %}{% if forloop.last == true %}{{ tag }}{% else %}{{ tag }}, {% endfor %}</p>
+	<p><em>Tags:</em> {% for tag in taglist %}{% if forloop.last == true %}{{ tag }}{% else %}{{ tag }}, {% endfor %}</p>
 	<p class="attribution">
 		<a href="{{ page.frontend }}">Challenge</a> by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
 		Coded by <a href="{{ site.github }}">{{ site.author }}</a>.
