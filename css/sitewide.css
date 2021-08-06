@@ -41,6 +41,12 @@ header h1 {
 }
 
 
-/* For the attribution links in the footer */
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+/* For the text/links in the footer */
+footer {
+	font-size: 11px;
+	text-align: center;
+	padding: 0.25em;
+}
+footer p { margin: 0.25em; }
+footer em { font-style: italic; }
+footer a { color: hsl(228, 45%, 44%); }
