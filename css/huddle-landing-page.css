@@ -21,30 +21,37 @@ body, * {
 	Default background and content spacing */
 main {
 	background: var(--violet) no-repeat;
-	padding: 1em 0;
+	padding: 1em;
 }
 
-/* Make sure images don't overflow the container, particularly on mobile */
-img { max-width: 100%; }
-
 /* The centered holder for most of the page's elements
-	Font adjustments and container spacing */
+	Font adjustments and container spacing/sizing */
 #content {
 	color: white;
 	line-height: 1.75;
 	margin: auto;
-	padding: 1em 0;
+	padding-bottom: 1em;
+	width: 92.5%;
 }
 
 /* Huddle logo; spacing */
-img[src*=logo] { margin: 1.5em 0; }
+#content img[src*=logo] { margin: 2em 0 2.5em; }
+
+/* Central section with text and mockups */
+#content .central {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Mockups image: Float to center, both vertically (desktop) and horizontally (mobile) */
+#content .central img { align-self: center; }
 
 /* "Build the community your fans will love" heading; base font style */
-#content h2 { font: 600 2.25em/1.65 "Poppins", sans-serif; }
+#content .central h2 { font: 600 2.25em/1.65 "Poppins", sans-serif; }
 
 /* Treat button and social icons as clickable */
 #content button,
-.socials i {
+#content .socials i {
 	cursor: pointer;
 }
 
@@ -71,7 +78,7 @@ img[src*=logo] { margin: 1.5em 0; }
 
 /* Social icons (individual icons)
 	Alignment/spacing of icons, sizing/shaping/decoration of buttons, interactivity */
-.socials i {
+#content .socials i {
 	border: 1px solid;
 	font-size: 1.2em;
 	text-align: center;
@@ -81,11 +88,12 @@ img[src*=logo] { margin: 1.5em 0; }
 	margin: 0.35em;
 	border-radius: 100%; /* round! */
 }
-.socials i:hover { color: #fd51c0; }
-.socials i:active {
+#content .socials i:hover { color: #fd51c0; }
+#content .socials i:active {
 	text-shadow: 0 0 10px #0003;
 	box-shadow: 0 0 5px 5px #0003 inset;
 }
+
 
 
 /* Desktop sizing */
@@ -98,39 +106,28 @@ img[src*=logo] { margin: 1.5em 0; }
 		background-size: cover;
 	}
 	
-	/* Huddle logo
-		Sizing and spacing */
-	img[src*=logo] {
-		width: 14%;
-		/* Maintain same padding on left as content section */
-		padding-left: max(5%, calc((100% - 100em) / 2));
-	}
-	
 	/* Centered content container
-		Arrange content layout and container width */
-	#content {
-		display: grid;
-		grid-template-columns: 1.2fr 1fr;
-		column-gap: 3em;
-		width: 90%;
-		max-width: 100em;
-	}
+		Set maximum container width */
+	#content { max-width: 100em; }
 	
-	/* Mockups
-		Fill grid cell (height is auto) */
-	#content img { width: 100%; }
+	/* Huddle logo; sizing */
+	#content img[src*=logo] { width: 16%; }
+	
+	/* Content's central section with mockups and text
+		Set width to space elements out*/
+	#content .central img { width: 54%; }
+	#content .central .text { width: 42%; }
 	
 	/* "Build the community your fans will love" heading
 		Make slightly narrower than rest of content and space out */
-	#content h2 {
+	#content .central h2 {
 		width: 80%;
 		margin: 1.5em 0 0.5em;
 	}
 	
 	/* Social icons container
 		Align to far right and space out */
-	.socials {
-		grid-column: 1 / span 2;
+	#content .socials {
 		text-align: right;
 		margin-top: 1em;
 	}
@@ -154,27 +151,23 @@ img[src*=logo] { margin: 1.5em 0; }
 	}
 	
 	/* Huddle logo
-		Fix spacing value and width on smaller screens */
-	img[src*=logo] {
-		padding-left: 7.5%;
-		/* width: min, regular, max values */
-		width: max(8.75em, min(24%, 12em));
-	}
+		Sizing. Minimum, regular, and maximum values */
+	#content img[src*=logo] { width: max(11em, min(30%, 14em)); }
 	
-	/* Centered content container
-		Center all content and adjust width on smaller screens */
-	#content {
+	/* Mockups/text container
+		Center content and layout in column */
+	#content .central {
 		text-align: center;
-		width: 85%;
+		flex-direction: column;
 	}
 	
 	/* Mockups
 		Provide a width limit to prevent image from taking up full screen */
-	#content img { max-width: min(35em, 100%); }
+	#content .central img { max-width: min(35em, 100%); }
 	
 	/* "Build the community your fans will love" heading
 		Decrease font size and spacing from other elements */
-	#content h2 {
+	#content .central h2 {
 		margin: 0.5em auto;
 		font-size: 1.6em;
 	}
@@ -185,6 +178,9 @@ img[src*=logo] { margin: 1.5em 0; }
 	#content button:active { box-shadow: 0 1px 1px 1px #0003; }
 	
 	/* Social icons container
-		Space things out */
-	.socials { margin: 3em 0 0.5em; }
+		Space things out and align to center */
+	#content .socials {
+		margin: 3em 0 0.5em;
+		text-align: center;
+	}
 }
