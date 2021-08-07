@@ -37,6 +37,8 @@ table {
 	max-width: 45em;
 	margin: 2em auto;
 }
+thead, tfoot { background: #0003; }
+thead a, tfoot a { text-decoration: none; }
 tr:nth-child(even) { background: #fff1; }
 tbody td:first-child,
 tbody td:last-child {
