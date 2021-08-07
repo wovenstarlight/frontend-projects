@@ -38,11 +38,22 @@ table {
 	margin: 2em auto;
 }
 tr:nth-child(even) { background: #fff1; }
-td:first-child { padding: 0.5em;
-	width: 15%;
+tbody td:first-child,
+tbody td:last-child {
+	padding: 0.5em;
+	width: 5%;
 }
 td a, td a:link {
 	display: block;
 	margin: 0;
 	padding: 0.5em;
+}
+
+@media (max-width: 550px) {
+	body {
+		font-size: 14px;
+		padding: 0 1em;
+	}
+	
+	.toc tbody td:last-child { display: none; }
 }
