@@ -9,23 +9,35 @@
 	{% endcapture %}
 	<title>{{ pagetitle }}</title>
 
-	<!-- Include basic site CSS and the CSS for the specific page -->
-	{% unless page.noReset %}
+	<!-- Unless the page or the layout disables it, reset page styles -->
+	{% unless page.noReset or layout.noReset %}
 		<link rel="stylesheet" href="{{ '/css/reset.css' | prepend: site.baseurl }}">
 	{% endunless %}
+	<!-- Sitewide styles -->
 	<link rel="stylesheet" href="{{ '/css/sitewide.css' | prepend: site.baseurl }}">
+	<!-- For project posts, add their associated stylesheet -->
 	{% if page.projectlink %}
 		<link rel="stylesheet" href="{{ page.projectlink | prepend: '/css/' | prepend: site.baseurl | append: '.css' }}">
 	{% endif %}
-	<!-- Include any additional required CSS -->
+	<!-- Additional required CSS from the page/layout -->
 	{% if page.sheets %}
 		{% for sheet in page.sheets %}
 		<link rel="stylesheet" href="{{ sheet | prepend: '/css/' | prepend: site.baseurl | append: '.css' }}">
 		{% endfor %}
 	{% endif %}
-	<!-- Include any additional externally hosted CSS -->
+	{% if layout.sheets %}
+		{% for sheet in layout.sheets %}
+		<link rel="stylesheet" href="{{ sheet | prepend: '/css/' | prepend: site.baseurl | append: '.css' }}">
+		{% endfor %}
+	{% endif %}
+	<!-- Additional externally hosted CSS from the page/layout -->
 	{% if page.links %}
 		{% for link in page.links %}
+		<link rel="stylesheet" href="{{ link }}">
+		{% endfor %}
+	{% endif %}
+	{% if layout.links %}
+		{% for link in layout.links %}
 		<link rel="stylesheet" href="{{ link }}">
 		{% endfor %}
 	{% endif %}
