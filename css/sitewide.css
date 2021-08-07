@@ -2,7 +2,7 @@
 .homelink {
 	position: fixed;
 	left: -7em;
-	top: 1em;
+	top: 0.25em;
 	background: black;
 	color: white;
 	font-family: Georgia, serif;
@@ -29,15 +29,18 @@
 	color: white;
 }
 
-/* For the header */
+/* For the header on post pages */
 header {
 	background: #08454e;
 	text-align: center;
 	padding: 0.5em;
+	z-index: 1;
+	position: relative;
 }
-header h1 {
+header h1 a {
 	color: #5fe2bd;
 	font-size: 1.2em;
+	text-decoration: none;
 }
 
 
