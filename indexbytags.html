@@ -18,9 +18,10 @@ sheets:		[index]
 			<tbody>
 				{% for post in tag[1] %}
 				<tr>
-					<td>{{ post.date | date: "%Y.%m.%d" }}</td>
+					<td>{{ forloop.rindex }}</td>
 					<td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.projectname }}</a></td>
-					<td><a href="{{ post.frontend }}">Challenge on Frontend Mentor</a></td>
+					<td><a href="{{ post.frontend }}">Challenge on FM.io</a></td>
+					<td>{{ post.date | date: "%Y.%m.%d" }}</td>
 				</tr>
 				{% endfor %}
 			</tbody>
