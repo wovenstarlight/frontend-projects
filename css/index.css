@@ -45,6 +45,7 @@ tbody td:last-child {
 	padding: 0.5em;
 	width: 5%;
 }
+td:nth-child(3) { width: 30%; }
 td a, td a:link {
 	display: block;
 	margin: 0;
