@@ -1,6 +1,7 @@
 ---
 assets:	"/assets/base-apparel-coming-soon"
 ---
+
 // STYLE GUIDE CONSTANTS
 // Import fonts
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
@@ -8,6 +9,12 @@ assets:	"/assets/base-apparel-coming-soon"
 $red-desat: hsl(0, 36%, 70%); // primary
 $red-soft: hsl(0, 93%, 68%); // primary
 $red-gray: hsl(0, 6%, 24%); // neutral
+// Colors (gradients)
+$grad-white: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$grad-red-start: hsl(0, 80%, 86%);
+$grad-red-end: hsl(0, 74%, 74%);
+$grad-red: linear-gradient(135deg, $grad-red-start, $grad-red-end);
+$grad-red-light: linear-gradient(135deg, lighten($grad-red-start, 50%), lighten($grad-red-end, 50%));
 
 // Desktop-mobile layout switch point
 $breakpoint: 600px;
@@ -15,9 +22,6 @@ $breakpoint: 600px;
 :root {
 	// Desktop hero image width
 	--hero-width: min(40em, 45%);
-	/* // Colors (gradients) */
-	--grad-white: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-	--grad-red: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
 
 @mixin josefin {
@@ -46,7 +50,7 @@ main { color: $red-desat; }
 
 #module {
 	background: {
-		image: url("{{ site.baseurl }}{{ page.assets }}/bg-pattern-desktop.svg"), var(--grad-white);
+		image: url("{{ site.baseurl }}{{ page.assets }}/bg-pattern-desktop.svg"), $grad-white;
 		position: left;
 		repeat: no-repeat;
 	}
@@ -116,7 +120,7 @@ main { color: $red-desat; }
 			width: 20%;
 			border-radius: 3em;
 			border: none;
-			background: var(--grad-red);
+			background: $grad-red;
 			/* Center arrow */
 			display: inline-flex;
 			justify-content: center;
@@ -124,12 +128,13 @@ main { color: $red-desat; }
 	
 			img { height: 50%; }
 		}
+		button:hover { background: $grad-red-light; }
 	}
 	
 	form.error { border-color: $red-soft; }
 	form.error::after {
 		$size: 1.5em;
-		background: url("/frontend-projects/assets/base-apparel-coming-soon/icon-error.svg");
+		background: url("{{ site.baseurl }}{{ page.assets }}/icon-error.svg");
 		content: "";
 		width: $size;
 		height: $size;
