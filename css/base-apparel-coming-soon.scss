@@ -20,6 +20,10 @@ $breakpoint: 600px;
 	--grad-red: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 }
 
+@mixin josefin {
+	font-family: "Josefin Sans", sans-serif;
+}
+
 @mixin height-fit-content {
 	height: -webkit-fit-content;
 	height: -moz-fit-content;
@@ -27,10 +31,7 @@ $breakpoint: 600px;
 }
 
 body {
-	font: {
-		size: 16px;
-		family: "Josefin Sans", sans-serif;
-	}
+	@include josefin;
 
 	@media (max-width: 1015px) {
 		font-size: 13px;
@@ -71,10 +72,50 @@ main { color: $red-desat; }
 		}
 		letter-spacing: 0.2em;
 		width: 60%;
+		
+		strong {
+			font-weight: 600;
+			color: $red-gray;
+		}
 	}
-	.text h2 strong {
-		font-weight: 600;
-		color: $red-gray;
+
+	form {
+		position: relative;
+		border: 1px solid hsla(0, 6%, 24%, 0.25);
+		border-radius: 3em;
+		text-align: left;
+
+		* {
+			@include josefin;
+			font-size: 16px;
+		}
+
+		input {
+			width: 72.5%;
+			background: none;
+			border-radius: 3em;
+			border: none;
+			padding: 1em;
+		}
+
+		label { display: none; }
+
+		button {
+			cursor: pointer;
+			position: absolute;
+			right: 0;
+			/* Center arrow */
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			border-radius: 3em;
+			border: none;
+			width: 20%;
+			background: var(--grad-red);
+	
+			img { height: 50%; }
+		}
 	}
 
 	@media (min-width: $breakpoint) {
