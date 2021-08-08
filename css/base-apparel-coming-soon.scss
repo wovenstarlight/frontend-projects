@@ -96,16 +96,22 @@ main { color: $red-desat; }
 	}
 	@media (max-width: $breakpoint) {
 		background-size: 100%;
+		padding: 3em 0;
+
+		.logo img { height: 2.5em; }
 
 		.text {
 			grid-row: 3;
 			grid-column: 1;
 			text-align: center;
+
+			h2 { width: 100%; }
 		}
 		
 		#hero {
 			grid-row: 2;
 			grid-column: 1;
+			margin: 3em 0 6em;
 
 			.desktop { display: none; }
 		}
