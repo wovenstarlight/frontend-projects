@@ -5,9 +5,18 @@ frontend:		https://www.frontendmentor.io/challenges/base-apparel-coming-soon-pag
 tags:			[HTML, SCSS, full page]
 notes:			"First attempt at using SCSS. Used variables, mixins, nested property declarations, and more. Focusing on SCSS first before Sass, for smoother transition from regular CSS."
 ---
-We're coming soon
+<section id="module">
+	<img src="{{ page.projectlink | append:'/logo.svg' | prepend: '/assets/' | relative_url }}" alt="Base Apparel">
+	<div class="text">
+		<h2>We're <strong>coming soon</strong></h2>
 
-Hello fellow shoppers! We're currently building our new fashion store. 
-Add your email below to stay up-to-date with announcements and our launch deals.
+		<p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
 
-Email Address
+		<form method="get" id="subscribe">
+			<input name="email" id="email" type="email">
+			<label for="email">Email Address</label>
+			<button type="submit" form="subscribe"><img src="{{ page.projectlink | append:'/icon-arrow.svg' | prepend: '/assets/' | relative_url }}" alt="Submit"></button>
+		</form>
+	</div>
+	<div id="hero"></div>
+</section>
