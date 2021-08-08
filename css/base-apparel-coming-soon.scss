@@ -64,18 +64,25 @@ main { color: $red-desat; }
 	}
 
 	// "We're coming soon" header
-	.text h2 {
-		text-transform: uppercase;
-		font: {
-			size: 4em;
-			weight: 200;
+	.text {
+		p {
+			line-height: 1.75em;
+			margin: 1em 0 2em;
 		}
-		letter-spacing: 0.2em;
-		width: 60%;
 		
-		strong {
-			font-weight: 600;
-			color: $red-gray;
+		h2 {
+			text-transform: uppercase;
+			font: {
+				size: 4em;
+				weight: 200;
+			}
+			letter-spacing: 0.2em;
+			width: 60%;
+			
+			strong {
+				font-weight: 600;
+				color: $red-gray;
+			}
 		}
 	}
 
@@ -104,15 +111,15 @@ main { color: $red-desat; }
 			cursor: pointer;
 			position: absolute;
 			right: 0;
+			height: 100%;
+			width: 20%;
+			border-radius: 3em;
+			border: none;
+			background: var(--grad-red);
 			/* Center arrow */
 			display: inline-flex;
 			justify-content: center;
 			align-items: center;
-			height: 100%;
-			border-radius: 3em;
-			border: none;
-			width: 20%;
-			background: var(--grad-red);
 	
 			img { height: 50%; }
 		}
