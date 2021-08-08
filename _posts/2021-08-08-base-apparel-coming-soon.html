@@ -20,6 +20,7 @@ notes:			"First attempt at using SCSS. Used variables, mixins, nested property d
 			<label for="email">Email Address</label>
 			<button type="submit" form="subscribe"><img src="{{ page.projectlink | append:'/icon-arrow.svg' | prepend: '/assets/' | relative_url }}" alt="Submit"></button>
 		</form>
+		<p class="error">Please enter <span>a</span> <span>email</span></p>
 	</div>
 	<div id="hero">
 		<img class="desktop" src="{{ page.projectlink | append:'/hero-desktop.jpg' | prepend: '/assets/' | relative_url }}">
