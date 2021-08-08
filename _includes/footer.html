@@ -1,4 +1,7 @@
 <footer>
+	{% if page.notes %}
+	<p>{{ page.notes }}</p>
+	{% endif %}
 	<p><em>Tags:</em> {% for tag in page.tags %}{% if forloop.last == true %}{{ tag }}{% else %}{{ tag }}, {% endif %}{% endfor %}</p>
 	<p class="attribution">
 		<a href="{{ page.frontend }}">Challenge</a> by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
