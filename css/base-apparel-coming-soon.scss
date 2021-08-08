@@ -46,10 +46,18 @@ main {
 	background: url("{{ site.baseurl }}{{ page.assets }}/bg-pattern-desktop.svg") no-repeat left;
 	background-size: calc(100% - var(--hero-width)) 100%;
 	display: grid;
-	@include height-fit-content; // to ensure img doesn't overflow
+	
+	@include height-fit-content; // to ensure img doesn't overflow vertically
+	#hero img { width: 100%; } // or horizontally
+
+	div:not(#hero) {
+		margin: 0 10%;
+		align-self: center;
+	}
 
 	@media (min-width: $breakpoint) {
 		grid-template-columns: 1fr var(--hero-width);
+		grid-template-rows: 1fr 5fr;
 
 		.text {
 			grid-row: 2;
@@ -62,15 +70,12 @@ main {
 
 			.mobile { display: none; }
 		}
-
-		#hero img {
-			width: 100%;
-		}
 	}
 	@media (max-width: $breakpoint) {
 		.text {
 			grid-row: 3;
 			grid-column: 1;
+			text-align: center;
 		}
 		
 		#hero {
