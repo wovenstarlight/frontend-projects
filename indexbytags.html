@@ -3,7 +3,8 @@ layout:		index
 ---
 <p>You are currently viewing <em>posts sorted by tags</em>.<br><a href="{{ site.baseurl }}">Click here for a list of posts sorted by date.</a></p>
 
-{% for tag in site.tags %}
+{% assign taglist = site.tags | sort %}
+{% for tag in taglist %}
 <section>
 	<h2>Posts in <em>{{ tag[0] }}</em></h2>
 
