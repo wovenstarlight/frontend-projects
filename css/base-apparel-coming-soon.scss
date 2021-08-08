@@ -5,20 +5,17 @@ assets:	"/assets/base-apparel-coming-soon"
 // STYLE GUIDE CONSTANTS
 // Import fonts
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
-// Opacity color constructor
-@function color($h, $s, $l, $a: 1) {
-	@return hsla($h, $s, $l, $a);
-}
 // Colors (flats)
-$red-desat: 0, 36%, 70%; // primary
-$red-soft: 0, 93%, 68%; // primary
-$red-gray: 0, 6%, 24%; // neutral
+$red-desat: hsl(0, 36%, 70%); // primary
+$red-soft: hsl(0, 93%, 68%); // primary
+$red-gray: hsl(0, 6%, 24%); // neutral
+$red-gray-faint: hsla(0, 6%, 24%, 0.25); // neutral (custom)
 // Colors (gradients)
 $grad-white: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 $grad-red-start: hsl(0, 80%, 86%);
 $grad-red-end: hsl(0, 74%, 74%);
 $grad-red: linear-gradient(135deg, $grad-red-start, $grad-red-end);
-$grad-red-light: linear-gradient(135deg, lighten($grad-red-start, 10%), lighten($grad-red-end, 10%));
+$grad-red-light: linear-gradient(135deg, lighten($grad-red-start, 50%), lighten($grad-red-end, 50%));
 
 // Desktop-mobile layout switch point
 $breakpoint: 600px;
@@ -50,7 +47,7 @@ body {
 	}
 }
 
-main { color: color($red-desat); }
+main { color: $red-desat; }
 
 #module {
 	background: {
@@ -89,20 +86,20 @@ main { color: color($red-desat); }
 			
 			strong {
 				font-weight: 600;
-				color: color($red-gray);
+				color: $red-gray;
 			}
 		}
 	}
 
 	form {
 		position: relative;
-		border: 1px solid color($red-gray, 0.25);
+		border: 1px solid $red-gray-faint;
 		border-radius: 3em;
 		text-align: left;
 
 		* {
 			@include josefin;
-			font-size: 1em;
+			font-size: 16px;
 		}
 
 		input {
@@ -129,14 +126,14 @@ main { color: color($red-desat); }
 			display: inline-flex;
 			justify-content: center;
 			align-items: center;
-			box-shadow: 0 1em 1em 0 color($red-gray, 0.25);
+			box-shadow: 0 1em 1em 0 $red-gray-faint;
 	
 			img { height: 50%; }
 		}
 		button:hover { background: $grad-red-light; }
 	}
 	
-	form.error { border-color: color($red-soft); }
+	form.error { border-color: $red-soft; }
 	form.error::after {
 		$size: 1.5em;
 		background: url("{{ site.baseurl }}{{ page.assets }}/icon-error.svg");
@@ -155,7 +152,7 @@ main { color: color($red-desat); }
 		margin: 0.5em;
 		margin-left: 1.5em;
 		text-align: left;
-		color: color($red-soft);
+		color: $red-soft;
 	}
 	form:not(.error) + p.error {
 		opacity: 0;
