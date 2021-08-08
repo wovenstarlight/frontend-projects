@@ -1,0 +1,24 @@
+// STYLE GUIDE CONSTANTS
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+// Colors (flats)
+$red-desat: hsl(0, 36%, 70%); // primary
+$red-soft: hsl(0, 93%, 68%); // primary
+$red-gray: hsl(0, 6%, 24%); // neutral
+// Linear gradient builder
+@mixin gradient($start, $end, $type: linear-gradient, $angle: 135deg) {
+	// Create gradient-type(at given angle, from start color, to end color)
+	background: $type($angle, $start, $end);
+  }
+// Colors (gradients)
+$grad-white: gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$grad-red: gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+// Desktop-mobile layout switch point
+$breakpoint: 375px;
+
+body {
+	font: {
+		size: 16px;
+		family: "Josefin Sans", sans-serif
+	}
+}
