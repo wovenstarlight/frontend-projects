@@ -2,7 +2,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-	<link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/assets/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32x32.png' | relative_url }}">
 
 	{% capture pagetitle %}
 	{% if page.projectname %}{{ page.projectname}} | {% endif %}{{ site.title }}
@@ -11,23 +11,23 @@
 
 	<!-- Unless the page or the layout disables it, reset page styles -->
 	{% unless page.noReset or layout.noReset %}
-		<link rel="stylesheet" href="{{ '/css/reset.css' | prepend: site.baseurl }}">
+		<link rel="stylesheet" href="{{ '/css/reset.css' | relative_url }}">
 	{% endunless %}
 	<!-- Sitewide styles -->
-	<link rel="stylesheet" href="{{ '/css/sitewide.css' | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ '/css/sitewide.css' | relative_url }}">
 	<!-- For project posts, add their associated stylesheet -->
 	{% if page.projectlink %}
-		<link rel="stylesheet" href="{{ page.projectlink | prepend: '/css/' | prepend: site.baseurl | append: '.css' }}">
+		<link rel="stylesheet" href="{{ page.projectlink | prepend: '/css/' | append: '.css' | relative_url }}">
 	{% endif %}
 	<!-- Additional required CSS from the page/layout -->
 	{% if page.sheets %}
 		{% for sheet in page.sheets %}
-		<link rel="stylesheet" href="{{ sheet | prepend: '/css/' | prepend: site.baseurl | append: '.css' }}">
+		<link rel="stylesheet" href="{{ sheet | prepend: '/css/' | append: '.css' | relative_url }}">
 		{% endfor %}
 	{% endif %}
 	{% if layout.sheets %}
 		{% for sheet in layout.sheets %}
-		<link rel="stylesheet" href="{{ sheet | prepend: '/css/' | prepend: site.baseurl | append: '.css' }}">
+		<link rel="stylesheet" href="{{ sheet | prepend: '/css/' | append: '.css' | relative_url }}">
 		{% endfor %}
 	{% endif %}
 	<!-- Additional externally hosted CSS from the page/layout -->

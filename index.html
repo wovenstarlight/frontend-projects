@@ -1,12 +1,12 @@
 ---
 layout:		index
 ---
-<p>You are currently viewing <em>posts sorted by date, newest to oldest</em>.<br><a href="{{ site.baseurl }}/indexbytags.html">Click here for a list of posts sorted by tag.</a></p>
+<p>You are currently viewing <em>posts sorted by date, newest to oldest</em>.<br><a href="{{ '/indexbytags.html' | relative_url }}">Click here for a list of posts sorted by tag.</a></p>
 
 <table class="toc">
 	<thead>
 		<tr>
-			<td colspan="4"><a href="{{ site.baseurl}}/indexreverse.html">⇅ Reverse Sort ⇅</a></td>
+			<td colspan="4"><a href="{{ '/indexreverse.html' | relative_url }}">⇅ Reverse Sort ⇅</a></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,7 +14,7 @@ layout:		index
 		{% for post in projects %}
 		<tr>
 			<td>{{ forloop.rindex }}</td>
-			<td><a href="{{ post.url | prepend: site.baseurl }}">{{ post.projectname }}</a></td>
+			<td><a href="{{ post.url | relative_url }}">{{ post.projectname }}</a></td>
 			<td><a href="{{ post.frontend }}">Challenge on FM.io</a></td>
 			<td>{{ post.date | date: "%Y.%m.%d" }}</td>
 		</tr>
@@ -22,7 +22,7 @@ layout:		index
 	</tbody>
 	<tfoot>
 		<tr>
-			<td colspan="4"><a href="{{ site.baseurl}}/indexreverse.html">⇅ Reverse Sort ⇅</a></td>
+			<td colspan="4"><a href="{{ '/indexreverse.html' | relative_url }}">⇅ Reverse Sort ⇅</a></td>
 		</tr>
 	</tfoot>
 </table>
