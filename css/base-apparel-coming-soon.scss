@@ -15,7 +15,7 @@ $grad-white: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 $grad-red-start: hsl(0, 80%, 86%);
 $grad-red-end: hsl(0, 74%, 74%);
 $grad-red: linear-gradient(135deg, $grad-red-start, $grad-red-end);
-$grad-red-light: linear-gradient(135deg, lighten($grad-red-start, 50%), lighten($grad-red-end, 50%));
+$grad-red-light: linear-gradient(135deg, lighten($grad-red-start, 10%), lighten($grad-red-end, 10%));
 
 // Desktop-mobile layout switch point
 $breakpoint: 600px;
@@ -99,7 +99,7 @@ main { color: $red-desat; }
 
 		* {
 			@include josefin;
-			font-size: 16px;
+			font-size: 1em;
 		}
 
 		input {
