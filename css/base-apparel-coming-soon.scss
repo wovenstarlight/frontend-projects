@@ -134,8 +134,9 @@ main { color: $red-desat; }
 		button:hover { background: $grad-red-light; }
 	}
 	
-	form.error { border-color: $red-soft; }
-	form.error::after {
+	form.error, form.empty { border-color: $red-soft; }
+	form.error::after,
+	form.empty::after {
 		$size: 1.5em;
 		background: url("{{ site.baseurl }}{{ page.assets }}/icon-error.svg");
 		content: "";
@@ -155,13 +156,13 @@ main { color: $red-desat; }
 		text-align: left;
 		color: $red-soft;
 	}
-	form:not(.error) + p.error {
+	form:not(.error):not(.empty) + p.error {
 		opacity: 0;
 		pointer-events: none;
 	}
 	// These next two toggle between "Please enter a valid email" and "Please enter an email"
-	form.error.empty + p span:first-of-type::after { content: "n"; }
-	form.error:not(.empty) + p span:last-of-type::before { content: "valid "; }
+	form.empty + p span:first-of-type::after { content: "n"; }
+	form:not(.empty) + p span:last-of-type::before { content: "valid "; }
 
 	@media (min-width: $breakpoint) {
 		grid-template-columns: 1fr var(--hero-width);
