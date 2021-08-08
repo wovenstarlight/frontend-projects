@@ -30,10 +30,18 @@ $breakpoint: 375px;
 	height: fit-content;
 }
 
-body, * {
+body {
 	font: {
 		size: 16px;
 		family: "Josefin Sans", sans-serif;
+	}
+
+	@media (max-width: 1015px) {
+		font-size: 13px;
+	}
+	
+	@media (max-width: 800px) {
+		font-size: 10px;
 	}
 }
 
