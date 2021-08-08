@@ -125,6 +125,35 @@ main { color: $red-desat; }
 			img { height: 50%; }
 		}
 	}
+	
+	form.error { border-color: $red-soft; }
+	form.error::after {
+		$size: 1.5em;
+		background: url("/frontend-projects/assets/base-apparel-coming-soon/icon-error.svg");
+		content: "";
+		width: $size;
+		height: $size;
+		background-size: $size;
+		display: inline-block;
+		position: absolute;
+		top: calc(50% - 0.75em); // size/2
+		right: calc(20% + 0.5em);
+	}
+
+	p.error {
+		font-size: 0.9em;
+		margin: 0.5em;
+		margin-left: 1.5em;
+		text-align: left;
+		color: $red-soft;
+	}
+	form:not(.error) + p.error {
+		opacity: 0;
+		pointer-events: none;
+	}
+	// These next two toggle between "Please enter a valid email" and "Please enter an email"
+	form.error.empty + p span:first-of-type::after { content: "n"; }
+	form.error:not(.empty) + p span:last-of-type::before { content: "valid "; }
 
 	@media (min-width: $breakpoint) {
 		grid-template-columns: 1fr var(--hero-width);
