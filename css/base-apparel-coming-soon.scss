@@ -12,6 +12,7 @@ $red-gray: hsl(0, 6%, 24%); // neutral
 @mixin bg-gradient($start, $end, $type: linear-gradient, $angle: 135deg) {
 	// Create gradient-type(at given angle, from start color, to end color)
 	background: $type($angle, $start, $end);
+    background: -o-$type($angle + 180deg, $start, $end);
   }
 /* // Colors (gradients)
 $grad-white: @include bg-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
@@ -20,6 +21,12 @@ $grad-red: @include bg-gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%)); */
 $breakpoint: 375px;
 // Desktop hero image width
 $hero-width: min(40em, 45%);
+
+@mixin height-fit-content {
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
+}
 
 body, * {
 	font: {
@@ -38,6 +45,8 @@ main {
 	height: 30em;
 	display: grid;
 	grid-template-columns: 1fr calc(100% - $hero-width);
+	@include height-fit-content; // to ensure img doesn't overflow
+
 	@media (min-width: $breakpoint) {
 		.text {
 			grid-row: 2;
