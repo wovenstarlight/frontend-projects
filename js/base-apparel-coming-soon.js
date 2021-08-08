@@ -11,7 +11,7 @@ $("#email").keyup( function() {
 	}
 
 	// check for invalidity
-	if (javainput.validity.valid) {
+	if (!javainput.validity.valid) {
 		form.addClass("error");
 	}
 	else {
