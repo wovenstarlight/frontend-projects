@@ -7,7 +7,9 @@ tags:			[HTML, SCSS, JS, full page]
 notes:			"First attempt at using SCSS. Used variables, mixins, nested property declarations, and more. Focusing on SCSS first before Sass, for smoother transition from regular CSS."
 ---
 <section id="module">
-	<img src="{{ page.projectlink | append:'/logo.svg' | prepend: '/assets/' | relative_url }}" alt="Base Apparel">
+	<div class="logo">
+		<img src="{{ page.projectlink | append:'/logo.svg' | prepend: '/assets/' | relative_url }}" alt="Base Apparel">
+	</div>
 	<div class="text">
 		<h2>We're <strong>coming soon</strong></h2>
 
