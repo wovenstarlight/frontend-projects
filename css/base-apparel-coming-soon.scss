@@ -41,10 +41,7 @@ body {
 	}
 }
 
-main {
-	@include bg-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-	color: $red-desat;
-}
+main { color: $red-desat; }
 
 #module {
 	background: {
