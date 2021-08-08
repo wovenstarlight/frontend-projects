@@ -50,9 +50,27 @@ main {
 	@include height-fit-content; // to ensure img doesn't overflow vertically
 	#hero img { width: 100%; } // or horizontally
 
+	// Align/size logo and text
 	div:not(#hero) {
-		margin: 0 10%;
-		align-self: center;
+		margin:0 auto;
+		align-self:center;
+		width: 80%;
+		max-width: 40em;
+	}
+
+	// "We're coming soon" header
+	.text h2 {
+		text-transform: uppercase;
+		font: {
+			size: 4em;
+			weight: 200;
+		}
+		letter-spacing: 0.2em;
+		width: 60%;
+	}
+	.text h2 strong {
+		font-weight: 600;
+		color: $red-gray;
 	}
 
 	@media (min-width: $breakpoint) {
