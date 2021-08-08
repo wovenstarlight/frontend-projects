@@ -18,9 +18,9 @@ $grad-red: gradient(hsl(0, 80%, 86%), hsl(0, 74%, 74%));
 // Desktop-mobile layout switch point
 $breakpoint: 375px;
 
-body {
+body, * {
 	font: {
 		size: 16px;
-		family: "Josefin Sans", sans-serif
+		family: "Josefin Sans", sans-serif;
 	}
 }
