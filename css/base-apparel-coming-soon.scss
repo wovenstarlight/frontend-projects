@@ -46,7 +46,6 @@ main { color: $red-desat; }
 #module {
 	background: {
 		image: url("{{ site.baseurl }}{{ page.assets }}/bg-pattern-desktop.svg"), var(--grad-white);
-		size: calc(100% - var(--hero-width)) 100%;
 		position: left;
 		repeat: no-repeat;
 	}
@@ -81,6 +80,7 @@ main { color: $red-desat; }
 	@media (min-width: $breakpoint) {
 		grid-template-columns: 1fr var(--hero-width);
 		grid-template-rows: 1fr 5fr;
+		background-size: calc(100% - var(--hero-width)) 100%;
 
 		.text {
 			grid-row: 2;
@@ -95,6 +95,8 @@ main { color: $red-desat; }
 		}
 	}
 	@media (max-width: $breakpoint) {
+		background-size: 100%;
+
 		.text {
 			grid-row: 3;
 			grid-column: 1;
