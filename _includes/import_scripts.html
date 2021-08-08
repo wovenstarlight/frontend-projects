@@ -1,0 +1,15 @@
+{% unless include.nojquery %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endunless %}
+<!-- Import other externally hosted scripts -->
+{% if page.ex_scripts %}
+{% for link in page.ex_scripts %}
+<script src="{{ link }}"></script>
+{% endfor %}
+{% endif %}
+<!-- Import site scripts -->
+{% if page.scripts %}
+{% for link in page.scripts %}
+<script src="{{ link | prepend: '/js/' | append: '.js' | relative_url }}"></script>
+{% endfor %}
+{% endif %}
