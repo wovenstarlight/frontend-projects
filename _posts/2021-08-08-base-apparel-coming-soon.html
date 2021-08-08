@@ -19,7 +19,10 @@ notes:			"First attempt at using SCSS. Used variables, mixins, nested property d
 			<button type="submit" form="subscribe"><img src="{{ page.projectlink | append:'/icon-arrow.svg' | prepend: '/assets/' | relative_url }}" alt="Submit"></button>
 		</form>
 	</div>
-	<div id="hero"></div>
+	<div id="hero">
+		<img class="desktop" src="{{ page.projectlink | append:'/hero-desktop.jpg' | prepend: '/assets/' | relative_url }}">
+		<img class="mobile" src="{{ page.projectlink | append:'/hero-mobile.jpg' | prepend: '/assets/' | relative_url }}">
+	</div>
 </section>
 
 {% include import_scripts.html %}
