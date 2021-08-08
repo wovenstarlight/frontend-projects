@@ -9,9 +9,10 @@ $red-desat: hsl(0, 36%, 70%); // primary
 $red-soft: hsl(0, 93%, 68%); // primary
 $red-gray: hsl(0, 6%, 24%); // neutral
 // Linear gradient builder
-@mixin bg-gradient($start, $end, $type: linear-gradient, $angle: 135deg) {
-	// Create gradient-type(at given angle, from start color, to end color)
-	background: $type($angle, $start, $end);
+@mixin bg-gradient($start, $end) {
+	// Create a linear gradient (at 135 degrees, from start color, to end color)
+	background: linear-gradient(135deg, $start, $end);
+	background: -o-linear-gradient(315deg, $start, $end);
   }
 /* // Colors (gradients)
 $grad-white: @include bg-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
@@ -38,6 +39,7 @@ body, * {
 
 main {
 	@include bg-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	color: $red-desat;
 }
 
 #module {
@@ -47,7 +49,7 @@ main {
 	@include height-fit-content; // to ensure img doesn't overflow
 
 	@media (min-width: $breakpoint) {
-		grid-template-columns: 1fr auto;
+		grid-template-columns: 1fr var(--hero-width);
 
 		.text {
 			grid-row: 2;
@@ -62,8 +64,7 @@ main {
 		}
 
 		#hero img {
-			width: var(--hero-width);
-			height: auto;
+			width: 100%;
 		}
 	}
 	@media (max-width: $breakpoint) {
