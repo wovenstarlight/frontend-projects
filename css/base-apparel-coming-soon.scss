@@ -65,11 +65,11 @@ main { color: $red-desat; }
 
 	// "We're coming soon" header
 	.text {
-		p {
+		p:first-of-type {
 			line-height: 1.75em;
 			margin: 1em 0 2em;
 		}
-		
+
 		h2 {
 			text-transform: uppercase;
 			font: {
@@ -98,11 +98,12 @@ main { color: $red-desat; }
 		}
 
 		input {
-			width: 72.5%;
+			width: 80%;
+			box-sizing: border-box;
 			background: none;
 			border-radius: 3em;
 			border: none;
-			padding: 1em;
+			padding: 1em 2em 1em 1.5em; // make space for the error icon
 		}
 
 		label { display: none; }
@@ -152,8 +153,12 @@ main { color: $red-desat; }
 			grid-row: 3;
 			grid-column: 1;
 			text-align: center;
+			font-size: 1.4em;
 
-			h2 { width: 100%; }
+			h2 {
+				width: 100%;
+				font-size: 2.5em;
+			}
 		}
 		
 		#hero {
