@@ -48,7 +48,6 @@ main { color: $red-desat; }
 #module {
 	background: {
 		image: url("{{ site.baseurl }}{{ page.assets }}/bg-pattern-desktop.svg"), $grad-white;
-		position: left;
 		repeat: no-repeat;
 	}
 	display: grid;
@@ -167,7 +166,10 @@ main { color: $red-desat; }
 	@media (min-width: $breakpoint) {
 		grid-template-columns: 1fr var(--hero-width);
 		grid-template-rows: 1fr 5fr;
-		background-size: calc(100% - var(--hero-width)) 100%;
+		background {
+			size: calc(100% - var(--hero-width)) 100%;
+			position: left;
+		}
 
 		.text {
 			grid-row: 2;
@@ -182,7 +184,10 @@ main { color: $red-desat; }
 		}
 	}
 	@media (max-width: $breakpoint) {
-		background-size: 100%;
+		background: {
+			size: cover;
+			position: center;
+		}
 		padding: 3em 0;
 
 		.logo img { height: 2.5em; }
