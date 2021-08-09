@@ -41,10 +41,6 @@ body {
 	@media (max-width: 1015px) {
 		font-size: 13px;
 	}
-	
-	@media (max-width: 800px) {
-		font-size: 10px;
-	}
 }
 
 main { color: $red-desat; }
@@ -87,6 +83,10 @@ main { color: $red-desat; }
 			strong {
 				font-weight: 600;
 				color: $red-gray;
+			}
+
+			@media (max-width: 800px) {
+				font-size: 2em;
 			}
 		}
 	}
