@@ -14,7 +14,7 @@ layout:		index
 		{% for post in projects %}
 		<tr>
 			<td>{{ forloop.rindex }}</td>
-			<td><a href="{{ post.url | relative_url }}">{{ post.projectname }} {% if post.wip %}[WIP]{% endif %}</a></td>
+			<td><a href="{{ post.url | relative_url }}">{{ post.projectname }} {% if post.wip %}(WIP){% endif %}</a></td>
 			<td><a href="{{ post.frontend }}">Challenge on FM.io</a></td>
 			<td>{{ post.date | date: "%Y.%m.%d" }}</td>
 		</tr>
