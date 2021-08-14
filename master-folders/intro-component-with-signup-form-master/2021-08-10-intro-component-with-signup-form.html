@@ -4,23 +4,38 @@ projectname:	Intro component with sign up form
 frontend:		https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1
 ex_scripts:		[https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js]
 scripts:		[intro-component-with-signup-form]
-tags:			[language/HTML, language/CSS, language/jQuery]
+tags:			[language/HTML, language/CSS, language/jQuery, page/section]
 notes:			"First attempt at using jQuery Validation plugin."
 ---
-Learn to code by watching others
+<section id="module">
+	<div class="text">
+		<h2>Learn to code by watching others</h2>
+		
+		<p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+	</div>
 
-See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-but understanding how developers think is invaluable. 
+	<p class="freebie"><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
 
-Try it free 7 days then $20/mo. thereafter
+	<form id="trialclaim" method="get">
+		<label for="firstname" class="accessibility">First Name</label>
+		<input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+		<label for="firstname" class="status"></label>
+		
+		<label for="lastname" class="accessibility">Last Name</label>
+		<input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+		<label for="lastname" class="status"></label>
 
-First Name 
-Last Name 
-Email Address
-Password
+		<label for="email" class="accessibility">Email Address</label>
+		<input type="email" name="email" id="email" placeholder="Email Address" required>
+		<label for="email" class="status"></label>
 
-Claim your free trial 
+		<label for="password" class="accessibility">Password</label>
+		<input type="password" name="password" id="password" placeholder="Password" required>
+		<label for="password" class="status"></label>
 
-By clicking the button, you are agreeing to our Terms and Services
+		<button type="submit">Claim your free trial</button>
+		<p>By clicking the button, you are agreeing to our <a>Terms and Services</a></p>
+	</form>
+</section>
 
 {% include import_scripts.html %}
