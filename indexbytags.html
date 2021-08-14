@@ -9,16 +9,7 @@ layout:		index
 	<h2>Posts in <em>{{ tag[0] }}</em></h2>
 
 	<table class="toc">
-		<tbody>
-			{% for post in tag[1] %}
-			<tr>
-				<td>{{ forloop.rindex }}</td>
-				<td><a href="{{ post.url | relative_url }}">{{ post.projectname }} {% if post.ipr %}(WIP){% endif %}</a></td>
-				<td><a href="{{ post.frontend }}">Challenge on FM.io</a></td>
-				<td>{{ post.date | date: "%Y.%m.%d" }}</td>
-			</tr>
-			{% endfor %}
-		</tbody>
+		{% include toc_body.html posts=tag[1] counter=forloop.rindex %}
 	</table>
 </section>
 {% endfor %}
