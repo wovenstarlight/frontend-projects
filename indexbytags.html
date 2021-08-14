@@ -9,7 +9,14 @@ layout:		index
 	<h2>Posts in <em>{{ tag[0] }}</em></h2>
 
 	<table class="toc">
-		{% include toc_body.html posts=tag[1] counter=forloop.rindex %}
+		<tbody>
+			{% for post in tag[1] %}
+			<tr>
+				<td>{{ forloop.rindex }}</td>
+				{% include post_row.html %}
+			</tr>
+			{% endfor %}
+		</tbody>
 	</table>
 </section>
 {% endfor %}
