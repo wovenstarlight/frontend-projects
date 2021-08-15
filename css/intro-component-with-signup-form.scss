@@ -33,10 +33,10 @@ body {
 	}
 
 	@media (min-width: $breakpoint) {
-		background-image: "{{ site.baseurl}}{{ page.assets }}/bg-intro-desktop.png";
+		background-image: url("{{ site.baseurl}}{{ page.assets }}/bg-intro-desktop.png");
 	}
 
 	@media (max-width: $breakpoint) {
-		background-image: "{{ site.baseurl}}{{ page.assets }}/bg-intro-mobile.png";
+		background-image: url("{{ site.baseurl}}{{ page.assets }}/bg-intro-mobile.png");
 	}
 }
