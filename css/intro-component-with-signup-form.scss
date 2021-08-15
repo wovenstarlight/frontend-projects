@@ -38,6 +38,14 @@ body {
 	.text {
 		grid-row: 1 / span 2; // takes up full left space
 		align-self: center; // vertical centering
+		color: white;
+	}
+
+	.freebie {
+		color: white;
+		background: $blue;
+		
+		.strong { font-weight: 600; }
 	}
 
 	form {
