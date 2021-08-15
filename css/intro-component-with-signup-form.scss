@@ -32,6 +32,31 @@ body {
 		size: cover;
 	}
 
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	.text {
+		grid-row: 1 / span 2; // takes up full left space
+		align-self: center; // vertical centering
+	}
+
+	form {
+		// vertical item layout
+		display: flex;
+		flex-direction: column;
+
+		label.accessibility {
+			// Hide labels that are only included for accessibility's sake from the viewer
+			// though floating labels would be better...
+			position: absolute;
+			left: -100%;
+		}
+
+		p { // Terms and Conditions message
+			align-self: center;
+		}
+	}
+
 	@media (min-width: $breakpoint) {
 		background-image: url("{{ site.baseurl}}{{ page.assets }}/bg-intro-desktop.png");
 	}
