@@ -1,0 +1,42 @@
+---
+assets:	"/assets/intro-component-with-signup-form"
+---
+
+// STYLE GUIDE CONSTANTS
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+// Colors
+$red: hsl(0, 100%, 74%); // primary
+$green: hsl(154, 59%, 51%); // primary
+$blue: hsl(248, 32%, 49%); // accent
+$blue-dark: hsl(249, 10%, 26%); // neutra;
+$blue-gray: hsl(246, 25%, 77%);
+
+// Desktop-mobile layout switch point
+$breakpoint: 600px;
+
+@mixin poppins {
+	font-family: "Poppins", sans-serif;
+}
+
+body {
+	font-size: 16px;
+	@include poppins;
+}
+
+#module {
+	background: {
+		color: $red;
+		position: center;
+		repeat: no-repeat;
+		size: cover;
+	}
+
+	@media (min-width: $breakpoint) {
+		background-image: "{{ site.baseurl}}{{ page.assets }}/bg-intro-desktop.png";
+	}
+
+	@media (max-width: $breakpoint) {
+		background-image: "{{ site.baseurl}}{{ page.assets }}/bg-intro-mobile.png";
+	}
+}
